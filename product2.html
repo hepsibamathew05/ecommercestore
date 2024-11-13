@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="cssf/product.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-left">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    
+    <div class="nav-logo">
+      <a href="index.html"><img src="imagesf/logo1.png" alt="Logo"></a>
+    </div>
+
+    <div class="nav-right">
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search..." />
+        <span id="searchIcon">
+            <img src="imagesf/search.png" alt="Search" id="iconImg" />
+        </span>
+    </div>
+    
+    
+    
+    
+    
+    
+      <img src="imagesf/cart.png" alt="Cart">
+    </div>
+  </div>
+    
+      
+      
+  </nav>
+    <div class="product-details-page">
+        <div class="image-container">
+            <img src="imagesf/product2.jpeg" alt="Product Image" id="productImage">
+        </div>
+        <div class="description-container">
+            <p style="color: rgb(103, 101, 101);"><strong>Home/Timeless Collection</strong></p>
+            <h2>Product Name 1</h2>
+            <h2 style="color: rgb(103, 101, 101); font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">$55.45 - $59.45 <span style="font-size: small;">& Free Shipping</span> </h2>
+            <p style="color: rgb(103, 101, 101);"><strong> Crafted from soft, breathable fabrics, the relaxed fit provides a carefree silhouette, while thoughtful details add a touch of urban chic. Whether you’re lounging at home or navigating a bustling day, our Timeless Classic Collection effortlessly combine ease with fashion, allowing you to move with relaxed confidence while making a statement of casual sophistication. </strong></p>
+            <!-- Include any other details like price, colors, sizes -->
+            <div class="sizes">
+                <span class="size">S</span>
+                <span class="size">M</span>
+                <span class="size">L</span>
+                <span class="size">XL</span>
+            </div>
+
+            <div class="colors">
+              <span class="color" style="background-color: red;"></span>
+              <span class="color" style="background-color: blue;"></span>
+              <span class="color" style="background-color: green;"></span>
+          </div>
+
+          <!-- Horizontal line -->
+        <hr class="hr-line">
+
+           <!-- Quantity Selector -->
+    <div class="quantity-cart-container">
+        <div class="quantity-selector">
+            <button class="minus">-</button>
+            <input type="text" value="1" id="quantity" readonly>
+            <button class="plus">+</button>
+        </div>
+        <button class="add-to-cart">ADD TO CART</button>
+    </div>
+        </div>
+    </div>
+
+    <!------------------------ Tabs slider --------------------------->
+
+
+    <div class="page">
+     
+        <!-- Horizontal line and buttons -->
+        <div class="tab-container">
+            <div class="horizontal-line"></div>
+            <div class="tab-buttons">
+                <button class="tab-button active" onclick="openTab(event, 'tab1')"><strong>Description</strong></button>
+                <button class="tab-button" onclick="openTab(event, 'tab2')"><strong>Additional Information</strong></button>
+                <button class="tab-button" onclick="openTab(event, 'tab3')"><strong>Reviews</strong></button>
+               
+            </div>
+        </div>
+    
+        <!-- Tab content sections -->
+        <div class="tab-content" id="tab1" style="display: block;">
+            
+            <p>Embrace comfort without sacrificing style in our Timeless Classic Collection, the epitome of laid-back luxury. Perfect for both active pursuits and leisurely moments, these joggers offer a harmonious blend of comfort and trendsetting design. Crafted from soft, breathable fabrics, the relaxed fit provides a carefree silhouette, while thoughtful details add a touch of urban chic. Whether you’re lounging at home or navigating a bustling day, our Timeless Classic Collection effortlessly combine ease with fashion, allowing you to move with relaxed confidence while making a statement of casual sophistication.</p>
+        </div>
+    
+        <div class="tab-content" id="tab2">
+            
+            <table>
+                <tr>
+                  <th>Size</th>
+                  <th>xxs</th>
+                  <th>xs</th>
+                  <th>s</th>
+                  <th>m</th>
+                  <th>l</th>
+                  <th>xl</th>
+                </tr>
+              <tr>
+                <th>neck</th>
+                <td>14</td>
+                <td>14.5</td>
+                <td>15</td>
+                <td>15.5</td>
+                <td>16</td>
+                <td>16.5</td>
+              </tr>
+              <tr>
+                <th>chest</th>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+              </tr>
+              <tr>
+                <th>length</th>
+                <td>26.5</td>
+                <td>27</td>
+                <td>27.5</td>
+                <td>28</td>
+                <td>28.5</td>
+                <td>29</td>
+              </tr>
+              <tr>
+                <th>waist</th>
+                <td>17.5</td>
+                <td>18.5</td>
+                <td>19.5</td>
+                <td>20.5</td>
+                <td>21.5</td>
+                <td>22.5</td>
+              </tr>
+              <tr>
+                <th>sleeve</th>
+                <td>32.75</td>
+                <td>33</td>
+                <td>33.25</td>
+                <td>33.5</td>
+                <td>33.75</td>
+                <td>34</td>
+              </tr>
+            </table>
+        </div>
+    
+        <div class="tab-content" id="tab3">
+            
+            <p>There are no reviews yet.
+
+                Be the first to review</p>
+
+                <div class="star-rating">
+                    <h3>Your Rating</h3>
+                    <span class="star" data-value="1">&#9733;</span>
+                    <span class="star" data-value="2">&#9733;</span>
+                    <span class="star" data-value="3">&#9733;</span>
+                    <span class="star" data-value="4">&#9733;</span>
+                    <span class="star" data-value="5">&#9733;</span>
+                </div>
+                
+                
+        </div>
+    
+        
+    </div>
+    
+    <!---------------------Products---------------------------->
+  <div class="carousel-container">
+    <h1 class="similar-products"><i>Similar Products</i></h1>
+    <div class="carousel">
+      
+        <div class="carousel-item">
+            <div class="product-card">
+                <img src="imagesf/product1.jpeg" alt="Product Image 1">
+                
+                <div class="product-details">
+                  <p style="color: rgb(126, 125, 125);">Tunics</p>
+                    <h3>Tunic-top 1</h3>
+                    <div class="price-section">
+                      <div class="price">$49.99</div>
+                      
+                  </div>
+                      
+                      <div class="sizes">
+                          <span class="size">S</span>
+                          <span class="size">M</span>
+                          <span class="size">L</span>
+                          <span class="size">XL</span>
+                      </div>
+
+                      <div class="colors">
+                        <span class="color" style="background-color: red;"></span>
+                        <span class="color" style="background-color: blue;"></span>
+                        <span class="color" style="background-color: green;"></span>
+                    </div>
+                  
+                    
+                    
+                </div>
+            </div>
+        </div>
+
+        <!--------   Product-2     ----------------->
+
+
+        <div class="carousel-item">
+          <div class="product-card">
+              <img src="imagesf/product2.jpeg" alt="Product Image 1">
+              
+              <div class="product-details">
+                <p style="color: rgb(126, 125, 125);">Tunics</p>
+                  <h3>Tunic-top 1</h3>
+                  <div class="price-section">
+                    <div class="price">$49.99</div>
+                    
+                </div>
+                    
+                    <div class="sizes">
+                        <span class="size">S</span>
+                        <span class="size">M</span>
+                        <span class="size">L</span>
+                        <span class="size">XL</span>
+                    </div>
+
+                    <div class="colors">
+                      <span class="color" style="background-color: red;"></span>
+                      <span class="color" style="background-color: blue;"></span>
+                      <span class="color" style="background-color: green;"></span>
+                  </div>
+                
+                  
+                  
+              </div>
+          </div>
+      </div>
+
+        <!------------ Product3     --------------->
+      <div class="carousel-item">
+        <div class="product-card">
+            <img src="imagesf/product3.jpeg" alt="Product Image 1">
+            
+            <div class="product-details">
+              <p style="color: rgb(126, 125, 125);">Tunics</p>
+                <h3>Tunic-top 1</h3>
+                <div class="price-section">
+                  <div class="price">$49.99</div>
+                  
+              </div>
+                  
+                  <div class="sizes">
+                      <span class="size">S</span>
+                      <span class="size">M</span>
+                      <span class="size">L</span>
+                      <span class="size">XL</span>
+                  </div>
+
+                  <div class="colors">
+                    <span class="color" style="background-color: red;"></span>
+                    <span class="color" style="background-color: blue;"></span>
+                    <span class="color" style="background-color: green;"></span>
+                </div>
+              
+                
+                
+            </div>
+        </div>
+    </div>
+      <!------------ Product3     --------------->
+
+    <div class="carousel-item">
+      <div class="product-card">
+          <img src="imagesf/product4.jpeg" alt="Product Image 1">
+          
+          <div class="product-details">
+            <p style="color: rgb(126, 125, 125);">Tunics</p>
+              <h3>Tunic-top 1</h3>
+              <div class="price-section">
+                <div class="price">$49.99</div>
+               
+            </div>
+                
+                <div class="sizes">
+                    <span class="size">S</span>
+                    <span class="size">M</span>
+                    <span class="size">L</span>
+                    <span class="size">XL</span>
+                </div>
+
+                <div class="colors">
+                  <span class="color" style="background-color: red;"></span>
+                  <span class="color" style="background-color: blue;"></span>
+                  <span class="color" style="background-color: green;"></span>
+              </div>
+            
+              
+              
+          </div>
+      </div>
+  </div>
+
+        <!-- Repeat for other carousel items -->
+    </div>
+    
+</div>
+    <script src="jsf/product.js"></script> <!-- Link to your JS file -->
+</body>
+</html>

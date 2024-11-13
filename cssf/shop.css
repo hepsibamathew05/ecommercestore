@@ -1,0 +1,387 @@
+/* General Styles */
+html, body {
+  margin: 0;  /* Remove margin */
+  padding: 0; /* Remove padding */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+
+.header {
+  width: 100vw; /* Full viewport width */
+  height: 110vh; /* Full viewport height */
+  background-size: cover; /* Ensure the image covers the entire area */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* No repetition of the image */
+  background-attachment: fixed;
+  margin: 0; /* No margin */
+  padding: 0; /* No padding */
+  position: relative; /* Optional: to position elements inside */
+  background-color: rgba(0, 0, 0, 0.5); /* Test with a semi-transparent black */
+}
+
+
+.navbar {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: transparent; /* Slightly transparent for visibility */
+  color: white;
+  position: absolute; /* Fixed position to stay at the top */
+  top: 0; /* Stick it to the top of the page */
+  width: 100%;
+  z-index: 1001; /* Set this higher than the overlay */
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Black transparent overlay */
+  z-index: 0; /* Lower than navbar */
+}
+
+.nav-left ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-left ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-left ul li a:hover {
+  color: #3a3a39;
+}
+
+.nav-logo {
+  position: absolute; /* Center the logo */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-logo img {
+  width: 200px;
+  height: auto; /* Maintain aspect ratio */
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: absolute;
+  right: 90px;
+}
+
+.nav-right img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+/* Search Container */
+.search-container {
+  position: relative;
+  width: 40px; /* Initially shows only the icon */
+  transition: width 0.5s ease;
+  display: flex;
+  align-items: center;
+}
+
+input[type="text"] {
+  width: 0;
+  padding: 10px;
+  padding-left: 35px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  opacity: 0;
+  transition: width 0.4s ease, opacity 0.4s ease;
+  box-sizing: border-box;
+}
+
+input[type="text"]::placeholder {
+  font-size: 16px;
+  color: #ccc;
+}
+
+#searchIcon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+}
+
+/* Header Content */
+.header-content {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.header-content h1 {
+  font-size: 55px;
+  line-height: 70px;
+  font-weight: 700;
+  max-width: 650px;
+  color: white;
+  font-family: 'Baskerville', serif; /* Use quotes for font family with spaces */
+  font-style: italic;
+}
+
+
+/* Text Styles */
+h1, h2 {
+  font-family: baskerville; /* Use quotes for font family with spaces */
+  font-style: italic;
+}
+
+p {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 100;
+}
+
+
+
+.carousel-container {
+  position: relative;
+  width: 110%;
+  margin: auto;
+  overflow: hidden;
+  background-color: white;
+  padding: 0 2px; 
+  margin-left: 30px;
+  height: 600px;
+  margin-top: 0; /* Reduces top margin */
+  padding-top: 0; /* Adjust as needed */
+
+}
+
+.carousel-heading {
+  text-align: center; 
+  margin: 20px 0; /* Add vertical margin for spacing */
+  font-family: baskerville; 
+  font-style: italic;
+}
+
+.carousel {
+  display: flex;
+  gap: 0px; /* Space between cards */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+  scroll-snap-type: x mandatory; /* Ensure snapping to each item */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  scroll-behavior: smooth; /* Smooth scrolling */
+  
+ 
+}
+
+.carousel-item {
+  flex: 0 0 auto; /* Ensure items do not shrink */
+  width: 300px; /* Adjust width of each item */
+  box-sizing: border-box; /* Include padding/border in width */
+  scroll-snap-align: start; /* Snap alignment */
+  margin-top: 100px;
+  margin-left: 5px;
+}
+
+.product-card {
+  background-color: white;
+  text-align: center;
+  position: relative;
+  width: 90%; /* Full width of the carousel item */
+  box-sizing: border-box;
+}
+
+.image-container{
+  position: relative;
+}
+
+.product-card img {
+  width: 100%; /* Adjust image width to fit card */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.product-card:hover .overlay {
+  opacity: 1; /* Show overlay on hover */
+}
+
+.add-to-cart {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  background: none;
+  padding: 0;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+  display: none; /* Initially hide the icon */
+}
+
+.add-to-cart img {
+  width: 40px; /* Adjust the size of the icon */
+  height: 40px;
+}
+
+.image-container:hover .add-to-cart {
+  display: block; /* Show the icon on hover */
+}
+
+.add-to-cart:hover {
+  background-color: #555; /* Darken on hover */
+  border-radius: 20px;
+  size: 30px;
+}
+
+
+.product-details {
+  position: relative;
+  overflow: hidden; /* Hide overflow for sliding effect */
+  text-align: center;
+  line-height: 0.6;
+
+}
+
+
+
+.price-section {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  height: 40px;
+  justify-content: center;
+}
+
+.price {
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+
+.colors, .sizes {
+  display: flex;
+  justify-content: center;
+  line-height: 1.5;
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+.color.active, .size.active {
+  border: 2px solid black; /* Add a black border */
+}
+
+
+.color {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 0 5px;
+  border: 1px solid white;
+}
+
+.size {
+  border: 1.5px solid rgb(172, 172, 172);
+  padding: 5px 10px;
+  margin: 0 5px;
+  border-radius: 7px;
+  font-size: 14px;
+  color: rgb(10, 10, 10);
+}
+
+
+/* Basic Footer Styling */
+.footer {
+  display: flex;
+  justify-content: space-around; /* Evenly space out the columns */
+  background-color: #ffffff; /* Dark background color */
+  padding: 60px 0;
+  color: rgb(0, 0, 0);
+}
+
+.footer-column {
+  flex: 1; /* Make each column take equal width */
+  padding: 10px;
+}
+
+.footer-column h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer-column ul {
+  list-style: none; /* Remove bullet points */
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 8px; /* Space between links */
+}
+
+.footer-column ul li a {
+  color: rgb(100, 98, 98); /* Initial link color */
+  text-decoration: none;
+  transition: color 0.3s; /* Smooth transition on hover */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Hover Effect */
+.footer-column ul li a:hover {
+  color: #000000; /* Change to your preferred color on hover */
+}
+
+/* Style for the horizontal line */
+.custom-line {
+  border: none;
+  border-top: 2px solid #e5e3e3; /* Thickness and color of the line */
+  margin: 20px 0; /* Add space above and below the line */
+  width: 100%;
+}
+
+/* Copyright Section Styling */
+.copyright {
+  text-align: center;
+  padding-top: 10px;
+  font-size: 14px;
+  color: #aaa;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Stack navbar items on smaller screens */
+  }
+  
+  .header-content h1 {
+    font-size: 35px; /* Adjust title font size */
+  }
+
+  .nav-right {
+    flex-direction: column; /* Stack social icons */
+  }
+
+  .nav-right img {
+    margin-bottom: 10px; /* Space between icons */
+  }
+
+  .text-below2 {
+    padding-right: 20px; /* Adjust padding for smaller screens */
+  }
+}

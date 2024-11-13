@@ -1,0 +1,472 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0; /* Ensure no default margin affects positioning */
+  padding: 0; /* Ensure no default padding affects positioning */
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: black; /* Slightly transparent for visibility */
+  color: white;
+  position: absolute; /* Fixed position to stay at the top */
+  top: 0; /* Stick it to the top of the page */
+  width: 100%;
+  z-index: 1001; /* Set this higher than the overlay */
+}
+
+
+
+.header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Black transparent overlay */
+  z-index: 0; /* Lower than navbar */
+}
+
+.nav-left ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-left ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-left ul li a:hover {
+  color: #a9a9a9;
+}
+
+.nav-logo {
+  position: absolute; /* Center the logo */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-logo img {
+  width: 200px;
+  height: auto; /* Maintain aspect ratio */
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: absolute;
+  right: 90px;
+}
+
+.nav-right img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.search-container {
+  position: relative;
+  width: 40px; /* Initially shows only the icon */
+  transition: width 0.5s ease;
+  display: flex;
+  align-items: center;
+}
+
+input[type="text"] {
+  width: 0;
+  padding: 10px;
+  padding-left: 35px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  opacity: 0;
+  transition: width 0.4s ease, opacity 0.4s ease;
+  box-sizing: border-box;
+}
+
+input[type="text"]::placeholder {
+  font-size: 16px;
+  color: #ccc;
+}
+
+#searchIcon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+
+
+
+.product-details-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  margin-top: 70px;
+  font-family: sans-serif;
+}
+
+.image-container {
+  width: 50%; /* Adjust as needed */
+  overflow: hidden; /* Hide overflow for magnifying effect */
+}
+
+.image-container img {
+  width: 100%;
+  transition: transform 0.3s ease; /* Smooth magnifying effect */
+}
+
+.image-container img:hover {
+  transform: scale(1.5); /* Magnify the image */
+}
+
+.description-container {
+  width: 45%; /* Adjust as needed */
+  padding-left: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+
+/* Add space below sizes and colors sections */
+.colors, .sizes {
+  display: flex;
+  justify-content: left;
+  line-height: 1.5;
+  gap: 10px;
+  margin: 5px 0;
+  row-gap: 20px;
+  cursor: pointer;
+}
+
+.sizes {
+  margin-bottom: 20px; /* Adjust space between sizes and the horizontal line */
+}
+
+.color.active, .size.active {
+  border: 2px solid black; /* Add a black border */
+}
+
+.color {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 0 5px;
+  border: 1px solid white;
+}
+
+.size {
+  border: 1.5px solid rgb(172, 172, 172);
+  padding: 5px 10px;
+  margin: 0 5px;
+  border-radius: 1px;
+  font-size: 14px;
+  color: rgb(10, 10, 10);
+}
+
+/* Horizontal line below sizes and colors */
+.hr-line {
+  border: none;
+  border-bottom: 1px solid #ccc; /* Color and style of the line */
+  margin: 20px 0; /* Space around the line */
+  width: 100%; /* Adjust as needed */
+}
+
+/* Container for quantity selector and Add to Cart button */
+.quantity-cart-container {
+  display: flex; /* Flex container for horizontal alignment */
+  align-items: center; /* Vertically center items */
+  gap: 10px; /* Space between quantity selector and Add to Cart button */
+}
+
+/* Quantity selector styling */
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc; /* Add border around the box */
+  border-radius: 3px; /* Optional: round the corners */
+  overflow: hidden; /* Ensure children elements do not overflow */
+  width: 130px; /* Adjust width based on content */
+  
+}
+
+
+.quantity-selector button {
+  background-color: #f0f0f0; /* Background color for buttons */
+  border: none; /* Remove default border */
+  padding: 10px; /* Padding for the buttons */
+  cursor: pointer;
+  font-size: 18px;
+  flex: 0 0 40px; /* Fixed width for buttons */
+}
+
+.quantity-selector input {
+  width: 50px; /* Fixed width for the quantity display */
+  text-align: center; /* Center align the text */
+  border: none; /* Remove default border */
+  border-left: 1px solid #ccc; /* Border between input and buttons */
+  border-right: 1px solid #ccc; /* Border between input and buttons */
+  font-size: 16px;
+  padding: 10px 0; /* Padding for input */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+/* Add to Cart button styling */
+.add-to-cart {
+  background-color: white; /* White background */
+  border: 2px solid rgb(104, 104, 104); /* Black border */
+  padding: 10px 20px; /* Padding for the button */
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 3px; /* Optional: round the corners */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  white-space: nowrap; /* Prevent button text from wrapping */
+  flex: 0 0 auto; /* Allow it to have its intrinsic width */
+}
+
+.add-to-cart:hover {
+  background-color: black; /* Black background on hover */
+  color: white; /* White text color on hover */
+  cursor:not-allowed;
+}
+
+/* Container styling */
+.tab-container {
+  position: relative;
+  width: 600px;
+}
+
+/* Horizontal line above the buttons */
+.horizontal-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 208%;
+  height: 2px;
+  background-color: #ddd;
+}
+
+.tab-buttons {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  margin-top: 20px; /* Space from the horizontal line */
+}
+
+/* Tab button styling */
+.tab-button {
+  padding: 20px 25px; /* Reduced padding for less space */
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  transition: color 0.3s ease;
+  margin: 0 5px; /* Small margin between buttons */
+}
+
+/* Highlight effect */
+.tab-button::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+/* Highlight the active tab */
+.tab-button.active::before {
+  background-color: #000000;
+}
+
+/* Content styling */
+.tab-content {
+  display: none;
+  padding: 20px 0;
+  margin-left: 30px;
+  color: #999;
+  font-weight: 550;
+}
+
+/* Show the first content by default */
+.tab-content:first-of-type {
+  display:flex;
+}
+
+* {
+  box-sizing:border-box;
+}
+
+table {
+  overflow: hidden;
+  display:inline-block;
+}
+
+td, th {
+    border: 1px solid #999;
+    padding: 10px;
+    position: relative;
+}
+
+th {
+  background-color:#fff;
+}
+
+/*Row*/td:hover::before { 
+    background-color: #eee;
+    content: '';  
+    height: 100%;
+    left: -5000px;
+    position: absolute;  
+    top: 0;
+    width: 10000px;   
+    z-index: -2;        
+}
+
+/*Column*/
+
+td:hover::after { 
+    background-color: rgb(193, 193, 191);
+    content: '';  
+    height: 10000px;    
+    left: 0;
+    position: absolute;  
+    top: -5000px;
+    width: 100%;
+    z-index: -1;        
+}
+
+
+/* Star rating container */
+.star-rating {
+  display: flex;
+  gap: 5px; /* Space between stars */
+}
+
+/* Star styling */
+.star {
+  font-size: 30px; /* Size of the stars */
+  color: #ccc; /* Default color of the stars */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* Highlight the stars up to the one being hovered over */
+.star:hover,
+.star:hover ~ .star {
+  color: #ccc; /* Reset the color of stars to the right */
+}
+
+/* Highlight only the star being hovered over */
+.star:hover {
+  color: #ffd700; /* Highlight color */
+}
+
+/* Maintain highlighted stars up to the selected one */
+.star.selected {
+  color: #ffd700; /* Color for selected stars */
+}
+
+.similar-products{
+  font-family: baskerville;
+  margin-left: 40px;
+  margin-top: 50px;
+  
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+  background-color: white;
+  padding: 0 2px; /* Add padding to the left and right */
+}
+
+.carousel-heading {
+  text-align: center; /* Center the heading */
+  margin: 20px 0; /* Add vertical margin for spacing */
+  font-family: baskerville; 
+  font-style: italic;
+}
+
+.carousel {
+  display: flex;
+  gap: 0px; /* Space between cards */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+  scroll-snap-type: x mandatory; /* Ensure snapping to each item */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  scroll-behavior: smooth; /* Smooth scrolling */
+  margin-left: 45px;
+ 
+}
+
+.carousel-item {
+  flex: 0 0 auto; /* Ensure items do not shrink */
+  width: 290px; /* Adjust width of each item */
+  box-sizing: border-box; /* Include padding/border in width */
+  scroll-snap-align: start; /* Snap alignment */
+  margin-top: 50px;
+  margin-left: 5px;
+}
+
+.product-card {
+  background-color: white;
+  text-align: center;
+  position: relative;
+  width: 90%; /* Full width of the carousel item */
+  box-sizing: border-box;
+}
+
+.product-card img {
+  width: 100%; /* Adjust image width to fit card */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.product-details {
+  position: relative;
+  overflow: hidden; /* Hide overflow for sliding effect */
+  text-align: left;
+  line-height: 0.6;
+
+}
+
+.price-section {
+  display: flex;
+  
+  align-items: center;
+  
+  overflow: hidden;
+  height: 40px;
+  justify-content: left;
+}
+
+.price {
+  font-size: 20px;
+  
+ 
+  
+  cursor: pointer;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+
+
+
+
+
+

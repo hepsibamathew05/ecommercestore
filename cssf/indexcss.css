@@ -1,0 +1,766 @@
+/* General Styles 
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+} */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background-color: #000;
+}
+
+.header {
+  width: 100%; /* Use 100% for full width */
+  height: 110vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  margin: 0; /* Remove negative margins */
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: transparent; /* Slightly transparent for visibility */
+  color: white;
+  position: absolute; /* Fixed position to stay at the top */
+  top: 0; /* Stick it to the top of the page */
+  width: 100%;
+  z-index: 1001; /* Set this higher than the overlay */
+}
+
+
+
+.header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Black transparent overlay */
+  z-index: 0; /* Lower than navbar */
+}
+
+.nav-left ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-left ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-left ul li a:hover {
+  color: #a9a9a9;
+}
+
+.nav-logo {
+  position: absolute; /* Center the logo */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-logo img {
+  width: 200px;
+  height: auto; /* Maintain aspect ratio */
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: absolute;
+  right: 90px;
+}
+
+.nav-right img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.search-container {
+  position: relative;
+  width: 40px; /* Initially shows only the icon */
+  transition: width 0.5s ease;
+  display: flex;
+  align-items: center;
+}
+
+input[type="text"] {
+  width: 0;
+  padding: 10px;
+  padding-left: 35px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  opacity: 0;
+  transition: width 0.4s ease, opacity 0.4s ease;
+  box-sizing: border-box;
+}
+
+input[type="text"]::placeholder {
+  font-size: 16px;
+  color: #ccc;
+}
+
+#searchIcon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+
+
+.header-content {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.header-content h1 {
+  font-size: 55px;
+  line-height: 70px;
+  font-weight: 700;
+  max-width: 650px;
+  color: white;
+  font-family: baskerville;
+  font-style: italic;
+}
+
+.header-content h3 {
+  font-family: sans-serif;
+  font-size: 15px;
+  font-weight: 100;
+  margin-bottom: 20px;
+  color: white;
+  line-height: 1.6;
+}
+
+
+button {
+  border: 2px solid rgb(255, 255, 255); /* White bounding box */
+  background: transparent; /* Transparent background */
+  color: rgb(255, 255, 255); /* White text color */
+  font-size: 16px;
+  cursor: pointer;
+  padding: 15px 30px;
+  font-family: Arial, sans-serif; /* Adjust font if needed */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition effect */
+}
+
+/* Hover effect */
+button:hover {
+  background: rgb(255, 255, 255); /* White background on hover */
+  color: rgb(0, 0, 0); /* Black text color on hover */
+}
+
+
+
+
+
+.head-content {
+  position: relative;
+  z-index: 2;
+  max-width: 40%;
+}
+
+.side-content{
+  color: rgb(94, 91, 91); 
+  margin-top: 220px;
+  margin-left: 50px;
+}
+.heading {
+  font-size: 50px;
+  font-weight: bold;
+  margin-top: 5%;
+  margin-left: 50px;
+}  
+
+/* Style for the Shop Now button */
+.shop-now-btn {
+margin-left: -36%;
+margin-top: 0%;
+height: 50px;
+padding: 10px 25px;
+font-size: 18px;
+font-weight: bold;
+color: #fff;
+background-color: #000;
+border: 2px solid;
+cursor: pointer;
+transition: background-color 0.3s ease, color 0.3s ease;
+border-radius: 5px;
+position: relative; /* This keeps the button unaffected by image animations */
+z-index: 3; /* Ensure the button stays above the images */
+}
+
+/* Hover effect for the button */
+.shop-now-btn:hover {
+background-color: #fff;
+color: #000;
+}
+
+
+
+
+
+/*Features */
+/*
+.features{
+  
+padding: 0%;
+font-size: 22px;
+text-align:left;
+margin-left: -9px;
+margin-top: -4px;
+}
+.row{
+display: flex;
+width: 100%;
+height: 80%;
+align-items: center;
+flex-wrap: wrap;
+margin-top: 5px;
+background-color: white; 
+
+}
+
+.text-col{
+flex-basis: 50%;
+margin-bottom: 20px;
+color: #323232;
+font-size: 15px;
+line-height: 1.6;
+
+}
+
+.img-col{
+flex-basis: 50%;
+margin-bottom: 20px;
+}
+.img-col img {
+  display: block;
+  width: 90%;
+  margin: 40px auto; 
+  height: 100%;
+}
+
+
+.features h2{
+font-size: 50px;
+font-weight: 600;
+margin-bottom: 20px;
+}
+*/
+
+.carousel-container {
+  position: relative;
+  width: 110%;
+  margin: auto;
+  overflow: hidden;
+  background-color: white;
+  padding: 0 2px; 
+  margin-left: -6px;
+  height: 800px;
+}
+
+.carousel-heading {
+  text-align: center; 
+  margin: 20px 0; /* Add vertical margin for spacing */
+  font-family: baskerville; 
+  font-style: italic;
+}
+
+.carousel {
+  display: flex;
+  gap: 0px; /* Space between cards */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+  scroll-snap-type: x mandatory; /* Ensure snapping to each item */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  scroll-behavior: smooth; /* Smooth scrolling */
+  margin-left: 45px;
+ 
+}
+
+.carousel-item {
+  flex: 0 0 auto; /* Ensure items do not shrink */
+  width: 300px; /* Adjust width of each item */
+  box-sizing: border-box; /* Include padding/border in width */
+  scroll-snap-align: start; /* Snap alignment */
+  margin-top: 100px;
+  margin-left: 5px;
+}
+
+.product-card {
+  background-color: white;
+  text-align: center;
+  position: relative;
+  width: 90%; /* Full width of the carousel item */
+  box-sizing: border-box;
+}
+
+.image-container{
+  position: relative;
+}
+
+.product-card img {
+  width: 100%; /* Adjust image width to fit card */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.product-card:hover .overlay {
+  opacity: 1; /* Show overlay on hover */
+}
+
+.add-to-cart {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  background: none;
+  padding: 0;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+  display: none; /* Initially hide the icon */
+}
+
+.add-to-cart img {
+  width: 40px; /* Adjust the size of the icon */
+  height: 40px;
+}
+
+.image-container:hover .add-to-cart {
+  display: block; /* Show the icon on hover */
+}
+
+.add-to-cart:hover {
+  background-color: #555; /* Darken on hover */
+  border-radius: 20px;
+  size: 30px;
+}
+
+
+.product-details {
+  position: relative;
+  overflow: hidden; /* Hide overflow for sliding effect */
+  text-align: center;
+  line-height: 0.6;
+
+}
+
+
+
+.price-section {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  height: 40px;
+  justify-content: center;
+}
+
+.price {
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+
+.colors, .sizes {
+  display: flex;
+  justify-content: center;
+  line-height: 1.5;
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+.color.active, .size.active {
+  border: 2px solid black; /* Add a black border */
+}
+
+
+.color {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 0 5px;
+  border: 1px solid white;
+}
+
+.size {
+  border: 1.5px solid rgb(172, 172, 172);
+  padding: 5px 10px;
+  margin: 0 5px;
+  border-radius: 7px;
+  font-size: 14px;
+  color: rgb(10, 10, 10);
+}
+
+.background-image {
+  width: 100%;
+  height: 770px; /* Adjust the height as needed */
+  margin-top: 0px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative; /* Ensure content can be positioned absolutely */
+  margin-left: 0px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+  z-index: 1; /* Ensure it stays above the background image */
+}
+
+.content {
+  position: absolute; /* Position content over the image */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the content */
+  color: white; /* Change text color as needed */
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+
+.right-image{
+  margin-bottom: 10px;
+  margin-left: 150%;
+  margin-top:60px;
+}
+
+.right-image img{
+  width: 300px;
+  height: auto;
+}
+
+.text-below{
+  text-align: center;
+  margin-left: 150%;
+  flex: 1;
+}
+
+.text-below h3{
+  margin-bottom: 10px;
+  white-space: nowrap;
+  font-size: 24px;
+  font-family: baskerville;
+  font-style: italic;
+
+}
+
+.text-below p{
+  max-width: 500px;
+}
+
+.image-content-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white; /* White background for the section */
+  padding: 50px; /* Adjust padding as needed */
+  margin-right: -42px;
+}
+
+.content-left {
+  width: 50%; /* Content takes up 50% of the section */
+  padding-right: 20px; /* Adds space between content and image */
+}
+
+.content-left h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #333; /* Dark text color */
+}
+
+.content-left p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555; /* Medium gray text color */
+}
+
+.content-left button {
+  margin-top: 20px;
+  border: 2px solid #333; /* Dark border */
+  background: transparent;
+  color: #333;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.content-left button:hover {
+  background-color: #333;
+  color: white;
+}
+
+.image-right {
+  width: 50%; /* Image takes up 50% of the section */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: -52px;
+}
+
+.image-right img {
+  max-width: 100%; /* Ensures the image doesn't overflow */
+  height: auto; /* Keeps the image's aspect ratio */
+  
+}
+
+.stars {
+  text-align: center;
+  font-size: 30px;
+  color: gold; /* Gold color for the stars */
+  margin-bottom: 10px; /* Space between stars and testimonial text */
+  z-index: 2; /* Ensures stars appear above the overlay */
+  position: relative; /* Ensures z-index works */
+}
+
+.text-below1 {
+  text-align: center;
+  font-size: 24px;
+  font-family: baskerville;
+  font-style: italic;
+  margin: 0 auto;
+  max-width: 800px;
+  position: relative;
+  top: 30%;
+  transform: translateY(-50%);
+  padding: 20px;
+  color: white;
+}
+
+.background-image1 {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  background-attachment: fixed;
+}
+
+.overlay1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.content1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.white-banner {
+  background-color: white; /* White background for the banner */
+  padding: 40px; /* Padding around the banner */
+  display: flex; /* Use Flexbox for layout */
+  justify-content: space-between; /* Space between columns */
+  align-items: flex-start; /* Align text to the top */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.column {
+  flex: 1; /* Flex each column to take equal space */
+  max-width: 22%; /* Limit the width of each column */
+  margin: 0 10px; /* Add some space between columns */
+  box-sizing: border-box; /* Include padding/margin in the total width */
+  text-align: center; /* Center align content inside columns */
+}
+
+.column img.icon {
+  width: 50px; /* Set the width of the icons */
+  height: auto; /* Keep aspect ratio */
+  margin-bottom: 10px; /* Add space between icon and heading */
+}
+
+.column h4 {
+  font-size: 18px; /* Heading size */
+  margin-bottom: 10px;
+}
+
+.column p {
+  font-size: 16px; /* Paragraph size */
+  color: #333; /* Darker text color */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .column {
+    flex: 1 1 45%; /* Stack two columns per row on smaller screens */
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .column {
+    flex: 1 1 100%; /* Stack columns vertically on very small screens */
+  }
+}
+
+
+
+.background-image2 {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  background-attachment: fixed;
+}
+
+.overlay2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: 1;
+}
+
+.content2 {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center; /* Vertically centers the content */
+  justify-content: flex-end; /* Align content to the right */
+  padding-right: 140px; /* Add right padding for spacing */
+  z-index: 2;
+  color: white; /* Text color */
+}
+
+.text-below2 {
+  text-align: left; /* Align text to the left */
+  max-width: 400px; /* Limit the width of the text */
+}
+
+.text-below2 p {
+  font-family: sans-serif;
+  font-size: 16px; /* Adjust font size if needed */
+}
+
+.text-below2 h3 {
+  font-size: 41px;
+  margin-bottom: 10px;
+  font-family: baskerville;
+  font-style: italic;
+}
+
+.text-below2 h2 {
+  font-family: sans-serif;
+  font-size: small;
+  margin-top: 10px;
+  line-height: 1.5; /* Add some line spacing */
+  color: white; /* Ensure text is visible */
+  font-size: large;
+}
+
+/* Basic Footer Styling */
+.footer {
+  display: flex;
+  justify-content: space-around; /* Evenly space out the columns */
+  background-color: #ffffff; /* Dark background color */
+  padding: 60px 0;
+  color: rgb(0, 0, 0);
+}
+
+.footer-column {
+  flex: 1; /* Make each column take equal width */
+  padding: 10px;
+}
+
+.footer-column h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer-column ul {
+  list-style: none; /* Remove bullet points */
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 8px; /* Space between links */
+}
+
+.footer-column ul li a {
+  color: rgb(100, 98, 98); /* Initial link color */
+  text-decoration: none;
+  transition: color 0.3s; /* Smooth transition on hover */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Hover Effect */
+.footer-column ul li a:hover {
+  color: #000000; /* Change to your preferred color on hover */
+}
+
+/* Style for the horizontal line */
+.custom-line {
+  border: none;
+  border-top: 2px solid #e5e3e3; /* Thickness and color of the line */
+  margin: 20px 0; /* Add space above and below the line */
+  width: 100%;
+}
+
+/* Copyright Section Styling */
+.copyright {
+  text-align: center;
+  padding-top: 10px;
+  font-size: 14px;
+  color: #aaa;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .content2 {
+    padding-right: 20px; /* Adjust right padding on smaller screens */
+  }
+
+  .text-below2 h3 {
+    font-size: 28px; /* Decrease heading size on smaller screens */
+  }
+
+  .text-below2 h2 {
+    font-size: small; /* Adjust the subtitle size */
+  }
+
+  .shop-now-btn {
+    font-size: 14px; /* Adjust button size for smaller screens */
+  }
+}

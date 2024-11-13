@@ -1,0 +1,462 @@
+/* General Styles */
+html, body {
+  margin: 0;  /* Remove margin */
+  padding: 0; /* Remove padding */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+
+.header {
+  width: 100vw; /* Full viewport width */
+  height: 110vh; /* Full viewport height */
+  background-size: cover; /* Ensure the image covers the entire area */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* No repetition of the image */
+  background-attachment: fixed;
+  margin: 0; /* No margin */
+  padding: 0; /* No padding */
+  position: relative; /* Optional: to position elements inside */
+  background-color: rgba(0, 0, 0, 0.5); /* Test with a semi-transparent black */
+}
+
+
+.navbar {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: transparent; /* Slightly transparent for visibility */
+  color: white;
+  position: absolute; /* Fixed position to stay at the top */
+  top: 0; /* Stick it to the top of the page */
+  width: 100%;
+  z-index: 1001; /* Set this higher than the overlay */
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Black transparent overlay */
+  z-index: 0; /* Lower than navbar */
+}
+
+.nav-left ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-left ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-left ul li a:hover {
+  color: #3a3a39;
+}
+
+.nav-logo {
+  position: absolute; /* Center the logo */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-logo img {
+  width: 200px;
+  height: auto; /* Maintain aspect ratio */
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: absolute;
+  right: 90px;
+}
+
+.nav-right img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+/* Search Container */
+.search-container {
+  position: relative;
+  width: 40px; /* Initially shows only the icon */
+  transition: width 0.5s ease;
+  display: flex;
+  align-items: center;
+}
+
+input[type="text"] {
+  width: 0;
+  padding: 10px;
+  padding-left: 35px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  opacity: 0;
+  transition: width 0.4s ease, opacity 0.4s ease;
+  box-sizing: border-box;
+}
+
+input[type="text"]::placeholder {
+  font-size: 16px;
+  color: #ccc;
+}
+
+#searchIcon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+}
+
+/* Header Content */
+.header-content {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.header-content h1 {
+  font-size: 55px;
+  line-height: 70px;
+  font-weight: 700;
+  max-width: 650px;
+  color: white;
+  font-family: 'Baskerville', serif; /* Use quotes for font family with spaces */
+  font-style: italic;
+}
+
+
+/* Text Styles */
+h1, h2 {
+  font-family: baskerville; /* Use quotes for font family with spaces */
+  font-style: italic;
+}
+
+p {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 100;
+}
+
+
+
+.quality {
+  text-align: center; /* Center-align text */
+  padding: 20px; /* Optional: add padding for spacing */
+  margin: 0 auto; /* Center the container itself if it has a fixed width */
+  margin-top: 90px;
+}
+
+.quality h1{
+  text-align: center;
+}
+
+/*contact form*/
+
+.contact-container {
+  display: flex; /* Align items side by side */
+  justify-content: space-between; /* Space between sections */
+  padding: 20px; /* Padding around the container */
+}
+
+.form-section {
+  flex: 1;
+}
+
+.info-section {
+  flex: 1;
+}
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#contact-form label {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+#contact-form input,
+#contact-form textarea {
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.styled-button {
+  border: 2px solid rgb(0, 0, 0) !important; /* Black border */
+  background-color: rgb(255, 255, 255) !important; /* Black background */
+  color: rgb(0, 0, 0) !important; /* White text color */
+  margin-top: 20px;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 15px 30px;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition effect */
+}
+
+/* Hover effect */
+.styled-button:hover {
+  background-color: rgb(0, 0, 0) !important; /* White background on hover */
+  color: rgb(255, 255, 255) !important; /* Black text color on hover */
+}
+
+
+.phone strong, 
+.email strong, 
+.address strong {
+  display: block;
+  margin-bottom: 5px; /* Space between label and answer */
+  color: #918d8d;
+}
+
+.phone div, 
+.email div, 
+.address div {
+  margin-bottom: 15px; /* Space between answer and next label */
+}
+
+.info-section {
+  flex: 1;
+  padding: 20px;
+}
+
+.phone-email {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ccc; /* Line between phone/email and address */
+}
+
+.address {
+  padding: 20px 0;
+  border-bottom: 1px solid #ccc; /* Line between address and follow us */
+}
+
+.follow-us {
+  margin-top: 10px;
+}
+
+.social-media-icons img {
+  width: 24px;
+  margin-right: 10px;
+}
+
+
+
+
+.white-banner {
+  background-color: white; /* White background for the banner */
+  padding: 40px; /* Padding around the banner */
+  display: flex; /* Use Flexbox for layout */
+  justify-content: space-between; /* Space between columns */
+  align-items: flex-start; /* Align text to the top */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.column {
+  flex: 1; /* Flex each column to take equal space */
+  max-width: 22%; /* Limit the width of each column */
+  margin: 0 10px; /* Add some space between columns */
+  box-sizing: border-box; /* Include padding/margin in the total width */
+  text-align: center; /* Center align content inside columns */
+}
+
+.column img.icon {
+  width: 50px; /* Set the width of the icons */
+  height: auto; /* Keep aspect ratio */
+  margin-bottom: 10px; /* Add space between icon and heading */
+}
+
+.column h4 {
+  font-size: 18px; /* Heading size */
+  margin-bottom: 10px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.column p {
+  font-size: 16px; /* Paragraph size */
+  color: #646262; /* Darker text color */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Background Image 2 Section */
+.background-image2 {
+  position: relative;
+  background-size: cover;
+  background-position: left center; /* Start from the left */
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  background-attachment: fixed;
+  margin: 0; /* Remove margin */
+  padding: 0; /* Remove padding */
+  overflow: hidden; /* Ensure no overflow */
+}
+
+.overlay2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: 1;
+}
+
+.content2 {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center; /* Vertically centers the content */
+  justify-content: flex-end; /* Align content to the right */
+  padding-right: 140px; /* Add right padding for spacing */
+  z-index: 2;
+  color: white; /* Text color */
+}
+
+.text-below2 {
+  text-align: left; /* Align text to the left */
+  max-width: 400px; /* Limit the width of the text */
+}
+
+.text-below2 p {
+  font-size: 16px; /* Adjust font size if needed */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.text-below2 h3 {
+  font-size: 41px;
+  margin-bottom: 10px;
+  font-family: 'Baskerville', serif; /* Use quotes for font family with spaces */
+  font-style: italic;
+}
+
+.text-below2 h2 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: large; /* Use large font size for subtitle */
+  margin-top: 10px;
+  line-height: 1.5; /* Add some line spacing */
+  color: white; /* Ensure text is visible */
+}
+
+.text-below2 h4{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Button Styles */
+button {
+  border: 2px solid rgb(255, 255, 255); /* White bounding box */
+  background: transparent; /* Transparent background */
+  color: rgb(255, 255, 255); /* White text color */
+  font-size: 16px;
+  cursor: pointer;
+  padding: 15px 30px;
+  font-family: Arial, sans-serif; /* Adjust font if needed */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition effect */
+}
+
+/* Hover effect for buttons */
+button:hover {
+  background: rgba(255, 255, 255, 0.2); /* Slightly white background on hover */
+  color: rgb(0, 0, 0); /* Change text color on hover */
+}
+
+
+/* Basic Footer Styling */
+.footer {
+  display: flex;
+  justify-content: space-around; /* Evenly space out the columns */
+  background-color: #ffffff; /* Dark background color */
+  padding: 60px 0;
+  color: rgb(0, 0, 0);
+}
+
+.footer-column {
+  flex: 1; /* Make each column take equal width */
+  padding: 10px;
+}
+
+.footer-column h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer-column ul {
+  list-style: none; /* Remove bullet points */
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 8px; /* Space between links */
+}
+
+.footer-column ul li a {
+  color: rgb(100, 98, 98); /* Initial link color */
+  text-decoration: none;
+  transition: color 0.3s; /* Smooth transition on hover */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Hover Effect */
+.footer-column ul li a:hover {
+  color: #000000; /* Change to your preferred color on hover */
+}
+
+/* Style for the horizontal line */
+.custom-line {
+  border: none;
+  border-top: 2px solid #e5e3e3; /* Thickness and color of the line */
+  margin: 20px 0; /* Add space above and below the line */
+  width: 100%;
+}
+
+/* Copyright Section Styling */
+.copyright {
+  text-align: center;
+  padding-top: 10px;
+  font-size: 14px;
+  color: #aaa;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Stack navbar items on smaller screens */
+  }
+  
+  .header-content h1 {
+    font-size: 35px; /* Adjust title font size */
+  }
+
+  .nav-right {
+    flex-direction: column; /* Stack social icons */
+  }
+
+  .nav-right img {
+    margin-bottom: 10px; /* Space between icons */
+  }
+
+  .text-below2 {
+    padding-right: 20px; /* Adjust padding for smaller screens */
+  }
+}
